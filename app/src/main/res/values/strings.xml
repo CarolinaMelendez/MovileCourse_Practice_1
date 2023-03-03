@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Practica1</string>
+    <string name="btn_red">RED</string>
+    <string name="btn_white">WhITE</string>
 </resources>

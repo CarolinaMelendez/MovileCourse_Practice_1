@@ -5,4 +5,7 @@
 
     <string name="action_search">Buscar</string>
     <string name="action_setting">Configuración</string>
+
+    <string name="btn_snackbar">Snack Bar</string>
+    <string name="undo_string">UNDO</string>
 </resources>

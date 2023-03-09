@@ -10,6 +10,8 @@ import android.widget.Button
 // import android.widget.Toolbar
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.appcompat.widget.Toolbar
+import com.google.android.material.snackbar.Snackbar
+
 class BackgroundActivity : AppCompatActivity() {
     private val btnOrange: Button
         get() = findViewById(R.id.btnOrange)
@@ -19,6 +21,8 @@ class BackgroundActivity : AppCompatActivity() {
         get() = findViewById(R.id.layoutPrincipal)
     private  val toolBar: Toolbar
         get() = findViewById(R.id.toolbar)
+    private val btnSnackBar: Button
+        get() = findViewById(R.id.btnSnackbar)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -33,6 +37,11 @@ class BackgroundActivity : AppCompatActivity() {
         }
         btnBlue.setOnClickListener {
             layaoutPrincipal.setBackgroundColor(Color.BLUE)
+        }
+        btnSnackBar.setOnClickListener{
+            val mySnackbar = Snackbar.make(findViewById(R.id.layoutPrincipal), R.string.app_name, Snackbar.LENGTH_LONG )
+            mySnackbar.setAction(R.string.undo_string , MyUndoListener())
+            mySnackbar.show()
         }
     }
 

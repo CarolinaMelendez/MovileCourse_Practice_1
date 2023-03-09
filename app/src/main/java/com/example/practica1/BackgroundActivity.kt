@@ -3,6 +3,9 @@ package com.example.practica1
 import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
+import android.view.Menu
+import android.view.MenuItem
 import android.widget.Button
 // import android.widget.Toolbar
 import androidx.constraintlayout.widget.ConstraintLayout
@@ -21,7 +24,7 @@ class BackgroundActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_background)
 
-        supportActionBar.let{
+        supportActionBar.let {
             setSupportActionBar(toolBar)
         }
 
@@ -32,4 +35,19 @@ class BackgroundActivity : AppCompatActivity() {
             layaoutPrincipal.setBackgroundColor(Color.BLUE)
         }
     }
-}
+
+        override fun onCreateOptionsMenu( menu: Menu? ): Boolean{
+            menuInflater.inflate(R.menu.menu_main_test,menu )
+            return true
+        }
+
+        override fun onOptionsItemSelected( item: MenuItem):Boolean{
+            when ( item?.itemId ){
+                R.id.menu_item1 -> {
+                    Log.d( "TEST","PRESS ICON MENU" )
+                    true
+                }
+            }
+            return super.onOptionsItemSelected(item)
+        }
+    }
